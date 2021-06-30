@@ -1,0 +1,43 @@
+#Write a Python program that multiply each number of given list with a given number
+
+nums = [2, 4, 6, 9, 11]
+n = 2
+print("Original list: ", nums)
+print("Given number: ", n)
+filtered_numbers=list(map(lambda number:number*n, nums))
+print("Result:")
+print(' '.join(map(str,filtered_numbers)))
+
+#Day 16 Assignment
+
+#Create a lambda function that multiplies argument x with argument y
+
+def func_compute(n):
+    return lambda x : x * n
+result = func_compute(2)
+print("Double the number of 15 =", result(15))
+result = func_compute(3)
+print("Triple the number of 15 =", result(15))
+result = func_compute(4)
+print("Quadruple the number of 15 =", result(15))
+result = func_compute(5)
+print("Quintuple the number of 15 =", result(15))
+
+#Write a Python program to find numbers divisible by 9 from a list of numbers
+
+#List of numbers
+list1 = [10, 21, 4, 45, 66, 93, 11]
+even_count = len(list(filter(lambda x: (x%2 == 0), list1)))
+print("Even numbers in the list: ", even_count)
+
+#Write a Pyhton program to create Fibonacci series to n using Lambda
+
+def fibonacci(count):
+    listA = [0, 1]
+    
+    any(map(lambda _:listA.append(sum(listA[-2:])),
+            range(2, count)))
+    
+    return listA[:count]
+
+print(fibonacci(8))
